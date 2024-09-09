@@ -15,4 +15,9 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
+  runtimeConfig: {
+    public: {
+      omdbApiKey: process.env.NUXT_PUBLIC_OMDB_API_KEY, // Expose the API key to the client
+    },
+  },
 })
