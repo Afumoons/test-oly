@@ -8,5 +8,11 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@nuxt/eslint',
     'nuxt-typed-router',
-  ]
+  ],
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    }
+  },
 })
