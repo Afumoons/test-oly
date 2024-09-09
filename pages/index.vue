@@ -24,11 +24,22 @@ const isLoading = ref(false);
 // Access runtime configuration
 const config = useRuntimeConfig();
 
+// Function to handle the new search
+const handleSearch = () => {
+  // Reset state when a new search is triggered
+  movies.value = [];
+  currentPage.value = 1;
+  totalResults.value = 0;
+  fetchMovies(1); // Fetch the first page of results for the new query
+};
+
 // Function to fetch movies using useFetch
 const fetchMovies = async (page = 1) => {
   if (!query.value || isLoading.value) return; // Prevent empty queries or multiple requests
 
   isLoading.value = true; // Set loading state
+
+  // Fetch data from the OMDb API
   const { data, error } = await useFetch<OmdbResponse>(
     `https://www.omdbapi.com/?apikey=${config.public.omdbApiKey}&s=${encodeURIComponent(query.value)}&type=movie&page=${page}`
   );
@@ -42,7 +53,7 @@ const fetchMovies = async (page = 1) => {
     movies.value = [];
   }
 
-  isLoading.value = false;
+  isLoading.value = false; // Reset loading state
 };
 
 // Function to handle scroll event
@@ -50,6 +61,7 @@ const handleScroll = () => {
   const scrollPosition = window.innerHeight + window.scrollY;
   const threshold = document.body.offsetHeight - 200;
 
+  // Trigger fetch for next page when scrolled near the bottom
   if (scrollPosition >= threshold && movies.value.length < totalResults.value) {
     currentPage.value++;
     fetchMovies(currentPage.value);
@@ -80,11 +92,11 @@ onBeforeUnmount(() => {
         type="text"
         v-model="query"
         class="w-full max-w-md p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        @keyup.enter="fetchMovies"
+        @keyup.enter="handleSearch"
         placeholder="Search for movies..."
       />
       <button
-        @click="fetchMovies"
+        @click="handleSearch"
         class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
       >
         Search
