@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@nuxt/eslint',
     'nuxt-typed-router',
+    'nuxt-aos',
   ],
   app: {
     pageTransition: {

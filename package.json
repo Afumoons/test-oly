@@ -18,6 +18,7 @@
     "@nuxt/eslint": "^0.5.6",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "nuxt-aos": "^1.2.5",
     "nuxt-swiper": "^1.2.2",
     "nuxt-typed-router": "^3.6.5"
   }

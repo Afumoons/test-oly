@@ -98,6 +98,7 @@ onBeforeUnmount(() => {
         v-for="movie in movies"
         :key="movie.imdbID"
         class="border border-gray-200 rounded-lg overflow-hidden shadow-md"
+        data-aos="fade-in"
       >
         <NuxtImg
           :src="movie.Poster"
