@@ -1,7 +1,22 @@
 <script setup lang="ts">
+// Define types for fetched data
+interface Movie {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
+
+interface OmdbResponse {
+  Search: Movie[];
+  totalResults: string;
+  Response: string;
+}
+
 // State variables
 const query = ref("");
-const movies = ref([]);
+const movies = ref<Movie[]>([]);
 
 // Access runtime configuration
 const config = useRuntimeConfig();
@@ -11,7 +26,7 @@ const fetchMovies = async () => {
   if (!query.value) return; // Prevent empty queries
 
   // Using useFetch to fetch data from the OMDb API
-  const { data, error } = await useFetch(
+  const { data, error } = await useFetch<OmdbResponse>(
     `https://www.omdbapi.com/?apikey=${config.public.omdbApiKey}&s=${encodeURIComponent(query.value)}&type=movie`
   );
 
