@@ -25,6 +25,11 @@ const fetchMovies = async () => {
   }
 };
 
+//SEO Meta configuration
+useSeoMeta({
+  title: "Olympic Front End Test",
+  ogTitle: "IMDB Movie Crawler",
+});
 </script>
 
 <template>
