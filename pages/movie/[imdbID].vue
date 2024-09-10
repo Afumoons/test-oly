@@ -65,9 +65,9 @@ useSeoMeta({
         </h1>
         <div class="other">
           <ul class="flex flex-col md:flex-row list-none gap-2">
-            <li>{{ movie?.Year }}</li>
-            <li>{{ movie?.Rated }}</li>
-            <li>{{ movie?.Runtime }}</li>
+            <li><strong>Year: </strong>{{ movie?.Year }}</li>
+            <li><strong>Rated: </strong>{{ movie?.Rated }}</li>
+            <li><strong>Runtime: </strong>{{ movie?.Runtime }}</li>
           </ul>
         </div>
         <div class="imdb flex flex-col items-center">
@@ -84,7 +84,7 @@ useSeoMeta({
           format="webp"
           alt="Movie Poster"
           loading="lazy"
-          class="w-full h-64 object-cover rounded-sm"
+          class="w-full md:w-auto h-auto md:h-96 xl:h-[500px] object-cover rounded-sm"
         />
         <div class="flex flex-col p-4">
           <p class="mb-4">{{ movie?.Plot }}</p>
