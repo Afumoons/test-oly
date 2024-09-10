@@ -95,12 +95,7 @@ onBeforeUnmount(() => {
         @keyup.enter="handleSearch"
         placeholder="Search for movies..."
       />
-      <button
-        @click="handleSearch"
-        class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-      >
-        Search
-      </button>
+      <PrimaryButton label="Search" type="button" :onClick="handleSearch" />
     </div>
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
