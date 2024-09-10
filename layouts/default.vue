@@ -3,7 +3,7 @@
     class="min-h-screen flex flex-col bg-gray-50/80 text-gray-800 dark:bg-gray-950/80 dark:text-gray-100 relative"
   >
     <header
-      class="sticky top-0 z-40 bg-gray-50/75 dark:bg-gray-950/75 backdrop-blur-xl border-b border-gray-500/50 h-[68px] flex"
+      class="sticky top-0 z-40 bg-gray-50/75 dark:bg-gray-950/75 backdrop-blur-xl border-b border-gray-500/50 dark:border-gray-900 h-[68px] flex"
     >
       <PageContainer class="flex-1 flex items-center justify-between">
         <NuxtLink to="/" class="font-bold text-lg">Olympic IMDB</NuxtLink>
@@ -14,7 +14,7 @@
       <slot />
     </div>
     <footer
-      class="bg-gray-50/75 dark:bg-gray-950/75 backdrop-blur-xl border-t border-gray-500/50 h-[38px] flex"
+      class="bg-gray-50/75 dark:bg-gray-950/75 backdrop-blur-xl border-t border-gray-500/50 dark:border-gray-900 h-[38px] flex"
     >
       <PageContainer class="flex-1 flex items-center">
         <div class="flex-1">

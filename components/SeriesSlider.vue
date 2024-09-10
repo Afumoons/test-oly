@@ -64,7 +64,7 @@ const sliderSlides = computed(() => {
               class="w-full h-48 object-cover"
               loading="lazy"
             />
-            <div class="p-2 bg-white text-center">
+            <div class="p-2 bg-white dark:bg-gray-950 text-center">
               <h3 class="font-semibold text-sm">{{ series.Title }}</h3>
             </div>
           </div>
