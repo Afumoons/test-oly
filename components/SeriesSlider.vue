@@ -8,7 +8,7 @@ interface Series {
   Poster: string;
 }
 
-// Props to receive query from the parent component
+// Props to receive series data from the parent component
 const props = defineProps<{
   series: Series[];
 }>();
