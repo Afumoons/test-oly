@@ -24,7 +24,7 @@ interface OmdbSeriesResponse {
 
 interface OmdbMovieResponse {
   Search: Movie[];
-  movieTotalResults: string;
+  totalResults: string;
   Response: string;
 }
 
@@ -88,7 +88,7 @@ const fetchMovies = async (page = 1) => {
     console.error("Error fetching movies:", error.value);
   } else if (data.value?.Search) {
     movies.value.push(...data.value.Search); // Append new results to existing list
-    movieTotalResults.value = parseInt(data.value.movieTotalResults, 10);
+    movieTotalResults.value = parseInt(data.value.totalResults, 10);
   } else {
     movies.value = [];
   }
