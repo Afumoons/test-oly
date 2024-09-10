@@ -44,6 +44,11 @@ const fetchMovieDetails = async () => {
 
 // Fetch movie details when the component is mounted
 onMounted(fetchMovieDetails);
+
+useSeoMeta({
+  title: "Movie Details",
+  ogTitle: "Movie Details",
+});
 </script>
 
 <template>
