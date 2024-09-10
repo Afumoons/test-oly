@@ -47,8 +47,10 @@ onMounted(fetchMovieDetails);
 </script>
 
 <template>
-  <div v-if="isLoading" class="text-center">Loading movie details...</div>
-  <div v-else-if="movie" class="flex flex-col items-center gap-4">
+  <div v-if="isLoading" class="text-center w-full">
+    Loading movie details...
+  </div>
+  <div v-else-if="movie" class="flex flex-col items-center gap-4 w-full">
     <div class="grid gap-4 w-full p-4">
       <h1 class="title text-center md:text-left text-3xl font-bold">
         {{ movie?.Title }}
@@ -84,9 +86,9 @@ onMounted(fetchMovieDetails);
       </div>
     </div>
   </div>
-  <div v-else class="flex flex-col items-center gap-4">
+  <div v-else class="flex flex-col items-center gap-4 w-full">
     <p class="text-center text-red-500">Movie details not found.</p>
-    <PrimaryButton label="Back to Home" type="link" link="/" />
+    <PrimaryButton label="Back to Home" type="link" link="/" onClick="true" />
   </div>
 </template>
 
