@@ -128,7 +128,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="">
+  <div class="w-full">
     <h1 class="text-3xl font-bold text-center mb-6">IMDB Movie Search</h1>
     <div class="flex justify-center mb-6">
       <input
