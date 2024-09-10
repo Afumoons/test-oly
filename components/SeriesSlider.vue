@@ -27,7 +27,7 @@ const sliderSlides = computed(() => {
 </script>
 
 <template>
-  <div v-if="series.length" class="mt-8">
+  <div v-if="series.length" class="mt-8 mb-4">
     <h2 class="text-2xl font-bold mb-4 text-center">Series Results</h2>
     <Swiper
       :slides-per-view="1"
