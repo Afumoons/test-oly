@@ -131,13 +131,16 @@ onBeforeUnmount(() => {
   <div class="w-full">
     <h1 class="text-3xl font-bold text-center mb-6">IMDB Movie Search</h1>
     <div class="flex justify-center mb-6">
-      <input
+      <UInput
         type="text"
         v-model="query"
-        class="w-full max-w-md p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="w-full max-w-md p-2"
+        size="md"
         @keyup.enter="handleSearch"
         placeholder="Search for movies..."
+        icon="i-heroicons-magnifying-glass-20-solid"
       />
+
       <PrimaryButton label="Search" type="button" :onClick="handleSearch" />
     </div>
 

@@ -10,17 +10,15 @@ interface Props {
 defineProps<Props>();
 </script>
 <template>
-  <button
+  <UButton
     v-if="type === 'button'"
+    :label="label"
+    size="sm"
     @click="onClick"
-    class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-  >
-    {{ label }}
-  </button>
-  <NuxtLink
-    v-else-if="type === 'link'"
-    :to="link"
-    class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-    >{{ label }}</NuxtLink
-  >
+    variant="solid"
+  />
+
+  <UButton v-else-if="type === 'link'">
+    <ULink :to="link">{{ label }}</ULink>
+  </UButton>
 </template>

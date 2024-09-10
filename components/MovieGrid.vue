@@ -17,7 +17,7 @@ const props = defineProps<{
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
   >
-    <NuxtLink
+    <ULink
       :to="'movie/' + movie.imdbID"
       v-for="movie in movies"
       :key="movie.imdbID"
@@ -35,6 +35,6 @@ const props = defineProps<{
         <h2 class="text-lg font-semibold">{{ movie.Title }}</h2>
         <p class="text-gray-600">{{ movie.Year }}</p>
       </div>
-    </NuxtLink>
+    </ULink>
   </div>
 </template>
