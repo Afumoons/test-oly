@@ -1,12 +1,7 @@
+import type { Config } from 'tailwindcss'
 
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [],
-  theme: {
-    extend: {
-      colors: {
-      },
-    },
-  },
-  plugins: [],
-};
+export default <Partial<Config>>{
+  content: [
+    'docs/content/**/*.md'
+  ]
+}
