@@ -55,41 +55,50 @@ useSeoMeta({
   <div v-if="isLoading" class="text-center w-full">
     Loading movie details...
   </div>
-  <div v-else-if="movie" class="flex flex-col items-center gap-4 w-full">
-    <div class="grid gap-4 w-full p-4">
-      <h1 class="title text-center md:text-left text-3xl font-bold">
-        {{ movie?.Title }}
-      </h1>
-      <div class="other">
-        <ul class="flex flex-col md:flex-row list-none gap-2">
-          <li>{{ movie?.Year }}</li>
-          <li>{{ movie?.Rated }}</li>
-          <li>{{ movie?.Runtime }}</li>
-        </ul>
+  <div v-else-if="movie" class="w-full h-full">
+    <div
+      class="flex flex-col items-center gap-4 p-4 w-full relative z-20 backdrop-blur-xl rounded-sm"
+    >
+      <div class="grid gap-4 w-full p-4">
+        <h1 class="title text-center md:text-left text-3xl font-bold">
+          {{ movie?.Title }}
+        </h1>
+        <div class="other">
+          <ul class="flex flex-col md:flex-row list-none gap-2">
+            <li>{{ movie?.Year }}</li>
+            <li>{{ movie?.Rated }}</li>
+            <li>{{ movie?.Runtime }}</li>
+          </ul>
+        </div>
+        <div class="imdb flex flex-col items-center">
+          <p>IMDB Rating</p>
+          <div class="flex flex-row items-end">
+            <p class="text-3xl font-bold">{{ movie?.imdbRating }}</p>
+            <p>/10</p>
+          </div>
+        </div>
       </div>
-      <div class="imdb flex flex-col items-center">
-        <p>IMDB Rating</p>
-        <div class="flex flex-row items-end">
-          <p class="text-3xl font-bold">{{ movie?.imdbRating }}</p>
-          <p>/10</p>
+      <div class="flex flex-col md:flex-row gap-4 w-full">
+        <NuxtImg
+          :src="movie.Poster"
+          format="webp"
+          alt="Movie Poster"
+          loading="lazy"
+          class="w-full h-64 object-cover rounded-sm"
+        />
+        <div class="flex flex-col p-4">
+          <p class="mb-4">{{ movie?.Plot }}</p>
+          <p><strong>Director:</strong> {{ movie?.Director }}</p>
+          <p><strong>Writers:</strong> {{ movie?.Writer }}</p>
+          <p><strong>Actors:</strong> {{ movie?.Actors }}</p>
         </div>
       </div>
     </div>
-    <div class="flex flex-col md:flex-row gap-4 w-full">
-      <NuxtImg
-        :src="movie.Poster"
-        format="webp"
-        alt="Movie Poster"
-        loading="lazy"
-        class="w-full h-64 object-cover"
-      />
-      <div class="flex flex-col p-4">
-        <p>{{ movie?.Plot }}</p>
-        <p><strong>Director:</strong> {{ movie?.Director }}</p>
-        <p><strong>Writers:</strong> {{ movie?.Writer }}</p>
-        <p><strong>Actors:</strong> {{ movie?.Actors }}</p>
-      </div>
-    </div>
+    <NuxtImg
+      :src="movie.Poster"
+      class="absolute bottom-0 top-0 left-0 right-0 w-full h-full z-[-10] object-cover"
+      loading="lazy"
+    />
   </div>
   <div v-else class="flex flex-col items-center gap-4 w-full">
     <p class="text-center text-red-500">Movie details not found.</p>

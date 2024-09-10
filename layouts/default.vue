@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen flex flex-col bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100"
+    class="min-h-screen flex flex-col bg-gray-50/80 text-gray-800 dark:bg-gray-950/80 dark:text-gray-100 relative"
   >
     <header
       class="sticky top-0 z-40 bg-gray-50/75 dark:bg-gray-950/75 backdrop-blur-xl border-b border-gray-500/50 h-[68px] flex"
@@ -13,7 +13,9 @@
     <div class="container mx-auto py-8 flex-1 flex">
       <slot />
     </div>
-    <footer class="border-t border-gray-500/50 h-[38px] flex">
+    <footer
+      class="bg-gray-50/75 dark:bg-gray-950/75 backdrop-blur-xl border-t border-gray-500/50 h-[38px] flex"
+    >
       <PageContainer class="flex-1 flex items-center">
         <div class="flex-1">
           <span class="text-sm">&copy; 2024 Afu</span>
