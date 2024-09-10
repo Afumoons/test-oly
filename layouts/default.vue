@@ -1,5 +1,20 @@
 <template>
   <div class="container mx-auto py-8">
-    <slot />
+    <header
+      class="sticky top-0 z-40 bg-gray-50/75 dark:bg-gray-950/75 backdrop-blur-xl border-b border-gray-500/50 h-[68px] flex"
+    >
+      <PageContainer class="flex-1 flex items-center justify-between">
+        <NuxtLink to="/" class="font-bold text-lg">Olympic IMDB</NuxtLink>
+        <ToggleMode />
+      </PageContainer>
+    </header>
+      <slot />
+    <footer class="border-t border-gray-500/50 h-[38px] flex">
+      <PageContainer class="flex-1 flex items-center">
+        <div class="flex-1">
+          <span class="text-sm">&copy; 2024 Afu</span>
+        </div>
+      </PageContainer>
+    </footer>
   </div>
 </template>
