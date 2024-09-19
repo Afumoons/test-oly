@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     'nuxt-typed-router',
     'nuxt-aos',
+    '@tresjs/nuxt',
   ],
   ui: {
     global: true
@@ -23,5 +24,8 @@ export default defineNuxtConfig({
     public: {
       omdbApiKey: process.env.NUXT_PUBLIC_OMDB_API_KEY, // Expose the API key to the client
     },
+  },
+  tres: {
+    devtools: true,
   },
 })

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "nuxt": "^3.13.0",
+    "three": "^0.168.0",
     "vue": "latest",
     "vue-router": "latest"
   },
@@ -19,6 +20,8 @@
     "@nuxt/image": "^1.8.0",
     "@nuxt/ui": "npm:@nuxt/ui-edge@latest",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@tresjs/nuxt": "^3.0.7",
+    "@types/three": "^0.168.0",
     "nuxt-aos": "^1.2.5",
     "nuxt-swiper": "^1.2.2",
     "nuxt-typed-router": "^3.6.5"
