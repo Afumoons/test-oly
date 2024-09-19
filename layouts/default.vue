@@ -7,7 +7,11 @@
     >
       <PageContainer class="flex-1 flex items-center justify-between">
         <NuxtLink to="/" class="font-bold text-lg">Olympic IMDB</NuxtLink>
-        <ToggleMode />
+        <div class="flex justify-between gap-2">
+          <PrimaryButton label="3D" type="link" link="/3d" onClick="" />
+          <p class="">|</p>
+          <ToggleMode />
+        </div>
       </PageContainer>
     </header>
     <div class="container mx-auto py-8 flex-1 flex">
