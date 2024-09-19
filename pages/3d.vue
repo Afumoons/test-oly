@@ -1,5 +1,11 @@
 <script setup>
 const fbxPath = "/koltuk2.fbx";
+
+// SEO Meta configuration
+useSeoMeta({
+  title: "3D Page",
+  ogTitle: "3D Immersive Page",
+});
 </script>
 
 <template>
