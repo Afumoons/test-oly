@@ -27,5 +27,6 @@ export default defineNuxtConfig({
   },
   tres: {
     devtools: true,
+    glsl: true,
   },
 })
